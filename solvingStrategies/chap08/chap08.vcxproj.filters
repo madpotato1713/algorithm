@@ -13,10 +13,13 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="소스 파일\Chap08">
+      <UniqueIdentifier>{5cfa4d36-2118-42fb-ba49-6bf3269b14d5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TILING2.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\Chap08</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
