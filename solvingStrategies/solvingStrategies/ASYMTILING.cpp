@@ -42,7 +42,7 @@ int main() {
 
 		int a = tilingCnt(0);
 		int b = halfTlingCnt(0);
-		cout << (a - b >= 0 ? a - b : a - b + mod) << endl;
+		cout << (a - b + mod) % mod << endl;
 	}
 
 	return 0;
