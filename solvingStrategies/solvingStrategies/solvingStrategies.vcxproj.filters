@@ -25,7 +25,10 @@
       <Filter>소스 파일\Chap08</Filter>
     </ClCompile>
     <ClCompile Include="SNAIL.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\Chap08</Filter>
+    </ClCompile>
+    <ClCompile Include="ASYMTILING.cpp">
+      <Filter>소스 파일\Chap08</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
