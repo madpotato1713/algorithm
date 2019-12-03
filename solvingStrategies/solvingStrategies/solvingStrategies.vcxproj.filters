@@ -30,5 +30,8 @@
     <ClCompile Include="ASYMTILING.cpp">
       <Filter>소스 파일\Chap08</Filter>
     </ClCompile>
+    <ClCompile Include="POLY.cpp">
+      <Filter>소스 파일\Chap08</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
