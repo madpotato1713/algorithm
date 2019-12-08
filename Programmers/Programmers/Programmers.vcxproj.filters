@@ -14,12 +14,18 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
     <Filter Include="소스 파일\stackAndQueue">
-      <UniqueIdentifier>{63fb82a1-137f-4f9b-91a8-b13fdf4061d2}</UniqueIdentifier>
+      <UniqueIdentifier>{5b4e89be-9050-404d-afed-6fd39d2471dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\DynamicProgramming">
+      <UniqueIdentifier>{3afb1fe3-ee3b-4fa7-aa7b-1905a430b963}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stackAndQueue.cpp">
       <Filter>소스 파일\stackAndQueue</Filter>
+    </ClCompile>
+    <ClCompile Include="IntegerTriangle.cpp">
+      <Filter>소스 파일\DynamicProgramming</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
