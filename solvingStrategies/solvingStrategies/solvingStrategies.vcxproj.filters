@@ -16,6 +16,9 @@
     <Filter Include="소스 파일\Chap08">
       <UniqueIdentifier>{78851cb3-c697-4221-a620-14d5dd20ead8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Chap09">
+      <UniqueIdentifier>{e7ec5078-d22c-4691-8152-b7cb029c11d8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TILING2.cpp">
@@ -37,7 +40,10 @@
       <Filter>소스 파일\Chap08</Filter>
     </ClCompile>
     <ClCompile Include="PACKING.cpp">
-      <Filter>소스 파일\Chap08</Filter>
+      <Filter>소스 파일\Chap09</Filter>
+    </ClCompile>
+    <ClCompile Include="OCR.cpp">
+      <Filter>소스 파일\Chap09</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
