@@ -30,5 +30,8 @@
     <ClCompile Include="MakeBiggerNumber.cpp">
       <Filter>소스 파일\DynamicProgramming</Filter>
     </ClCompile>
+    <ClCompile Include="goingSchool.cpp">
+      <Filter>소스 파일\DynamicProgramming</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
