@@ -143,6 +143,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Longest Common Prefix.cpp" />
     <ClCompile Include="PalindromeNumber.cpp" />
     <ClCompile Include="RomantoInteger.cpp" />
   </ItemGroup>
