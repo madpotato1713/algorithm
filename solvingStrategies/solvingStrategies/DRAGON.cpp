@@ -1,32 +1,62 @@
 #include<iostream>
 #include<string>
+#include<algorithm>
 
 using namespace std;
 
 int n, p, l;
-char words[6] = { 'F', 'X', '+', 'Y', 'F', '-' };
 
-string solve() {
+int cache[51];
+int MAX = 1000000001;
 
-	string res = "";
+void calc() {
+	cache[0] = 1;
+	for (int i = 1; i <= 50; i++) {
+		cache[i] = min(MAX, cache[i - 1] * 2 + 2);
+	}
+}
 
-	int cnt = 0;
-	while (cnt < l) {
-		res += (words[(p + cnt - 1) % 6]);
-		cnt++;
+//X -> X + YF
+//Y -> FX - Y
+char solve(const string& str, int gen, int skip) {
+	if (gen == 0) {
+		return str[skip];
 	}
 
-	return res;
+	for (int i = 0; i < str.size(); i++) {
+		if (str[i] == 'X' || str[i] == 'Y') {
+			if (skip >= cache[gen]) {
+				skip -= cache[gen];
+			}
+			else if (str[i] == 'X') {
+				return solve("X+YF", gen - 1, skip);
+			}
+			else {
+				return solve("FX-Y", gen - 1, skip);
+			}
+		}
+		else if (skip > 0)
+			skip--;
+		else
+			return str[i];
+	}
+
+	return ' ';
 }
 
 int main() {
 
 	int testCase;
 	cin >> testCase;
+	calc();
 
 	for (int tc = 0; tc < testCase; tc++) {
 		cin >> n >> p >> l;
 
-		cout << solve() << endl;
+		for (int i = 0; i < l; i++) {
+			cout << solve("FX", n, p - 1 + i);
+		}
+
+		cout << endl;
 	}
 }
