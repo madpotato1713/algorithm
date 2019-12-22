@@ -48,6 +48,7 @@ int main() {
 			memset(cache, -1, sizeof(cache));
 			int flag;
 			for (int y = 0; y < 5; y++) {
+
 				flag = 0;
 				for (int x = 0; x < 5; x++) {
 					if (flag = findWord(words[i], y, x, 0)) break;

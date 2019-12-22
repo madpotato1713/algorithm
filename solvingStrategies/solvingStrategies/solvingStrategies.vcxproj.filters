@@ -54,5 +54,8 @@
     <ClCompile Include="BOGGLE.cpp">
       <Filter>소스 파일\Chap06</Filter>
     </ClCompile>
+    <ClCompile Include="PICNIC.cpp">
+      <Filter>소스 파일\Chap06</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
