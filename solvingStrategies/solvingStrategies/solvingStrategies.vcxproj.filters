@@ -28,6 +28,9 @@
     <Filter Include="소스 파일\Chap18">
       <UniqueIdentifier>{b2e6a96c-f9d3-4b78-96ff-6ab44411bde4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Chap19">
+      <UniqueIdentifier>{1a0ea2e9-494e-4d3a-a21b-35d51a4c7bab}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TILING2.cpp">
@@ -74,6 +77,9 @@
     </ClCompile>
     <ClCompile Include="JUMPGAME.cpp">
       <Filter>소스 파일\Chap08</Filter>
+    </ClCompile>
+    <ClCompile Include="BRACKETS2.cpp">
+      <Filter>소스 파일\Chap19</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
