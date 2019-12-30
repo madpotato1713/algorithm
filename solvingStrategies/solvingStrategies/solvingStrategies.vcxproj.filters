@@ -72,5 +72,8 @@
     <ClCompile Include="JOSEPHUS.cpp">
       <Filter>소스 파일\Chap18</Filter>
     </ClCompile>
+    <ClCompile Include="JUMPGAME.cpp">
+      <Filter>소스 파일\Chap08</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
