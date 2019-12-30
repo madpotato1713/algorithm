@@ -25,6 +25,9 @@
     <Filter Include="소스 파일\Chap07">
       <UniqueIdentifier>{da33dac6-8160-4f37-8d9d-df2c9e29d11f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Chap18">
+      <UniqueIdentifier>{b2e6a96c-f9d3-4b78-96ff-6ab44411bde4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TILING2.cpp">
@@ -65,6 +68,9 @@
     </ClCompile>
     <ClCompile Include="QUADTREE.cpp">
       <Filter>소스 파일\Chap07</Filter>
+    </ClCompile>
+    <ClCompile Include="JOSEPHUS.cpp">
+      <Filter>소스 파일\Chap18</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
