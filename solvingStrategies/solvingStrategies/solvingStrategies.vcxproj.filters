@@ -31,6 +31,9 @@
     <Filter Include="소스 파일\Chap19">
       <UniqueIdentifier>{1a0ea2e9-494e-4d3a-a21b-35d51a4c7bab}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Chap20">
+      <UniqueIdentifier>{5b52b191-65b5-4d3a-b28f-442d834fb896}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TILING2.cpp">
@@ -83,6 +86,9 @@
     </ClCompile>
     <ClCompile Include="TRIANGLEPATH.cpp">
       <Filter>소스 파일\Chap08</Filter>
+    </ClCompile>
+    <ClCompile Include="NAMING.cpp">
+      <Filter>소스 파일\Chap20</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
