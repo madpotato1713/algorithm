@@ -90,5 +90,8 @@
     <ClCompile Include="NAMING.cpp">
       <Filter>소스 파일\Chap20</Filter>
     </ClCompile>
+    <ClCompile Include="LIS.cpp">
+      <Filter>소스 파일\Chap08</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
