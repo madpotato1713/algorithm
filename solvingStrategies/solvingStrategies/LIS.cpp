@@ -14,13 +14,11 @@ int lis(int idx) {
 	if (res != -1) return res;
 
 	res = 1;
-	int sum = 0;
 	for (int i = idx + 1; i < N; i++) {
 		if (idx == -1 || seq[i] > seq[idx]) {
-			sum = max(sum, lis(i));
+			res = max(res, lis(i) + 1);
 		}
 	}
-	res += sum;
 
 	return res;
 }

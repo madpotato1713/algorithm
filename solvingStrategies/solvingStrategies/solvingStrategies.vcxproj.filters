@@ -99,5 +99,8 @@
     <ClCompile Include="PI.cpp">
       <Filter>소스 파일\Chap08</Filter>
     </ClCompile>
+    <ClCompile Include="JLIS.cpp">
+      <Filter>소스 파일\Chap08</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
