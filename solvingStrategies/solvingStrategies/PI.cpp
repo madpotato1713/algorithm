@@ -2,16 +2,30 @@
 
 using namespace std;
 
-int cache[]
-
-int main() {
-
-	int testCase;
-	cin >> testCase;
-
-	for (int tc = 0; tc < testCase; tc++) {
-
-	}
-
-	return 0;
+int CalculateArea(int width, int height)
+{
+	return width * height;
 }
+
+int CalculateArea(int width, int height, bool)
+{
+	return width * height / 2;
+}
+
+
+
+void main()
+{
+
+	cout << "»ç°¢Çü ³ÐÀÌ:";
+
+	cout << CalculateArea(3, 4) << endl;
+
+	cout << "»ï°¢Çü ³ÐÀÌ:";
+
+	cout << CalculateArea(3, 4, true) << endl;
+
+}
+
+
+
