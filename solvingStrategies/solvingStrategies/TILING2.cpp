@@ -9,9 +9,7 @@ int cache[100];
 
 int tiling(int idx) {
 	//기저사례: 사각형 끝에 닿았을 때 성공
-	if (idx == n) return 1;
-	//기저사례: 사각형을 벗어나면 실패
-	if (idx > n) return 0;
+	if (idx >= n - 1) return 1;
 
 	int& res = cache[idx];
 	if (res != -1) return res;

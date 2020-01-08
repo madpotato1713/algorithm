@@ -34,6 +34,9 @@
     <Filter Include="소스 파일\Chap20">
       <UniqueIdentifier>{5b52b191-65b5-4d3a-b28f-442d834fb896}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Chap21">
+      <UniqueIdentifier>{4670d9bf-c169-4e7b-9549-b723a72a3321}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TILING2.cpp">
@@ -101,6 +104,9 @@
     </ClCompile>
     <ClCompile Include="JLIS.cpp">
       <Filter>소스 파일\Chap08</Filter>
+    </ClCompile>
+    <ClCompile Include="TRAVERSAL.cpp">
+      <Filter>소스 파일\Chap21</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
