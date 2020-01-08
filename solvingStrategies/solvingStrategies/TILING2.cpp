@@ -3,19 +3,25 @@
 
 using namespace std;
 
-const int d = 1000000007;
-int map[101];
-
+const int MOD = 1000000007;
 int n;
+int cache[100];
 
-int solve(int x) {
-	int& res = map[x];
+int tiling(int idx) {
+	//기저사례: 사각형 끝에 닿았을 때 성공
+	if (idx == n) return 1;
+	//기저사례: 사각형을 벗어나면 실패
+	if (idx > n) return 0;
+
+	int& res = cache[idx];
 	if (res != -1) return res;
 
-	if (x == 1) return res = 1;
-	if (x == 2) return res = 2;
+	res = 0;
+	for (int i = 1; i <= 2; i++) {
+		res += tiling(idx + i);
+		res %= MOD;
+	}
 
-	res = ((solve(x - 1) % d) + (solve(x - 2) % d)) % d;
 	return res;
 }
 
@@ -25,10 +31,10 @@ int main() {
 	cin >> testCase;
 
 	for (int tc = 0; tc < testCase; tc++) {
-		memset(map, -1, sizeof(map));
+		memset(cache, -1, sizeof(cache));
 		cin >> n;
 
-		cout << solve(n) << endl;
+		cout << tiling(0) << endl;
 	}
 
 	return 0;
