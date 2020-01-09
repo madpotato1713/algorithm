@@ -1,23 +1,19 @@
 #include<iostream>
-#include<cmath>
 
 using namespace std;
 
-long double cache[1000][1000];
-int LEN, DAY;	
+double cache[1001][1001];
 
-long double snail(int day, int len) {
-	if (day >= DAY) {
-		if (len >= LEN) return 1;
-		else return 0;
-	}
+double snail(int n, int m) {
+	if (n <= 0) return 1;
+	if (m <= 0) return 0;
 
-	long double& res = cache[day][len];
+	double& res = cache[n][m];
 	if (res != -1) return res;
 
-	double a = 0.25 * snail(day + 1, len + 1);
-	double b = 0.75 * snail(day + 1, len + 2);
-	return res = a + b;
+	res = 0.75 * snail(n - 2, m - 1) + 0.25 * snail(n - 1, m - 1);
+
+	return res;
 }
 
 int main() {
@@ -26,16 +22,18 @@ int main() {
 	cin >> testCase;
 
 	for (int tc = 0; tc < testCase; tc++) {
-		for (int i = 0; i < 1000; i++) {
-			for (int j = 0; j < 1000; j++) {
+		int n, m;
+		cin >> n >> m;
+
+		for (int i = 1; i <= n; i++) {
+			for (int j = 1; j <= m; j++) {
 				cache[i][j] = -1;
 			}
 		}
-		cin >> LEN >> DAY;
-		
+
 		cout << fixed;
 		cout.precision(10);
-		cout << snail(0, 0) << endl;
+		cout << snail(n, m) << endl;
 	}
 
 	return 0;
