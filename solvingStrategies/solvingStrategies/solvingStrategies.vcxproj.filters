@@ -114,5 +114,8 @@
     <ClCompile Include="RUNNINGMEDIAN.cpp">
       <Filter>소스 파일\Chap23</Filter>
     </ClCompile>
+    <ClCompile Include="TICTACTOE.cpp">
+      <Filter>소스 파일\Chap09</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
