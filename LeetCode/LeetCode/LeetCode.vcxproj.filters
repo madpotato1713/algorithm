@@ -39,5 +39,8 @@
     <ClCompile Include="ImplementStrStr.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="CountandSay.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
