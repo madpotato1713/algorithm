@@ -40,6 +40,9 @@
     <Filter Include="소스 파일\Chap23">
       <UniqueIdentifier>{05e73185-eade-41ec-a221-4b2a356731aa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Chap28">
+      <UniqueIdentifier>{bec1e367-eb74-40d9-bc7a-c4f6f9a17bd9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TILING2.cpp">
@@ -116,6 +119,9 @@
     </ClCompile>
     <ClCompile Include="TICTACTOE.cpp">
       <Filter>소스 파일\Chap09</Filter>
+    </ClCompile>
+    <ClCompile Include="DICTIONARY.cpp">
+      <Filter>소스 파일\Chap28</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
