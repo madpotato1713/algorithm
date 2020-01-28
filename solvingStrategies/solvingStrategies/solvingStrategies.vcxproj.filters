@@ -126,5 +126,8 @@
     <ClCompile Include="NUMBERGAME.cpp">
       <Filter>소스 파일\Chap09</Filter>
     </ClCompile>
+    <ClCompile Include="WORDCHAIN.cpp">
+      <Filter>소스 파일\Chap28</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
