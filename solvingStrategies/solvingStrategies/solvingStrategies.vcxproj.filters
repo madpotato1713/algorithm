@@ -43,6 +43,9 @@
     <Filter Include="소스 파일\Chap28">
       <UniqueIdentifier>{bec1e367-eb74-40d9-bc7a-c4f6f9a17bd9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Chap10">
+      <UniqueIdentifier>{c4bd9e93-178e-4704-9f15-6582eb56863a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TILING2.cpp">
@@ -128,6 +131,9 @@
     </ClCompile>
     <ClCompile Include="WORDCHAIN.cpp">
       <Filter>소스 파일\Chap28</Filter>
+    </ClCompile>
+    <ClCompile Include="MATCHORDER.cpp">
+      <Filter>소스 파일\Chap10</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
