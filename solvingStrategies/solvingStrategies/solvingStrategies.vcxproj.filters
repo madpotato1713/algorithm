@@ -135,5 +135,8 @@
     <ClCompile Include="MATCHORDER.cpp">
       <Filter>소스 파일\Chap10</Filter>
     </ClCompile>
+    <ClCompile Include="LUNCHBOX.cpp">
+      <Filter>소스 파일\Chap10</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
