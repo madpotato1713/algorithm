@@ -22,8 +22,7 @@ int getTime() {
 	//sort(time.begin(), time.end(), greater<pair<int, int>>());
 	sort(time.begin(), time.end(), compare);
 
-	int res = 0;	//첫 번째 도시락을 데우는 시간
-	int restEat = 0;
+	int res = 0, restEat = 0;
 	for (int i = 0; i < n; i++) {
 		res += time[i].second;	//도시락 데우는 시간 더해줌
 		//데우고 나면 먹음
@@ -67,8 +66,8 @@ int main() {
 			cin >> eatingTime[i];
 		}
 
-		//cout << getTime() << endl;
-		cout << getTime2() << endl;
+		cout << getTime() << endl;
+		//cout << getTime2() << endl;
 	}
 
 	return 0;

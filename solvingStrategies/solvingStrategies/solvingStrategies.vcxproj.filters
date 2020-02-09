@@ -46,6 +46,9 @@
     <Filter Include="소스 파일\Chap10">
       <UniqueIdentifier>{c4bd9e93-178e-4704-9f15-6582eb56863a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Chap30">
+      <UniqueIdentifier>{89d5392d-37bc-4b41-bf61-b51ba42e1122}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TILING2.cpp">
@@ -137,6 +140,9 @@
     </ClCompile>
     <ClCompile Include="LUNCHBOX.cpp">
       <Filter>소스 파일\Chap10</Filter>
+    </ClCompile>
+    <ClCompile Include="ROUTING.cpp">
+      <Filter>소스 파일\Chap30</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
