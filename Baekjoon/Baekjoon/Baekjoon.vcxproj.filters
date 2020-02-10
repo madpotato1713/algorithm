@@ -15,7 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="no_13460.cpp">
+    <ClCompile Include="구슬탈출2.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="드래곤커브.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
