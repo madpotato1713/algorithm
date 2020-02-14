@@ -21,5 +21,8 @@
     <ClCompile Include="드래곤커브.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="게리맨더링2.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
