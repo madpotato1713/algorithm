@@ -4,7 +4,7 @@
 using namespace std;
 
 int H, W, R, C;
-char board[10][10], block[10][10];
+int board[10][10], block[10][10];
 
 int main() {
 
@@ -16,13 +16,17 @@ int main() {
 
 		for (int y = 0; y < H; y++) {
 			for (int x = 0; x < W; x++) {
-				cin >> board[y][x];
+				char ch;
+				cin >> ch;
+				board[y][x] = (ch == '#' ? -1 : 0);
 			}
 		}
 
 		for (int y = 0; y < R; y++) {
 			for (int x = 0; x < C; x++) {
-				cin >> block[y][x];
+				char ch;
+				cin >> ch;
+				block[y][x] = (ch == '#' ? -1 : 0);
 			}
 		}
 
