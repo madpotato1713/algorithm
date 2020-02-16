@@ -68,7 +68,7 @@ void setDist(int x, int y, int d1, int d2) {
 		dist[r][c] = 5;
 	}
 
-	/*for (int r = x + 1; r < x + d1 + d2; r++) {
+	for (int r = x + 1; r < x + d1 + d2; r++) {
 		int flag = -1;
 		for (int c = 1; c <= N; c++) {
 			if (flag == -1) {
@@ -81,18 +81,18 @@ void setDist(int x, int y, int d1, int d2) {
 				dist[r][c] = 5;
 			}
 		}
-	}*/
+	}
 }
 
 int minDiff() {
-	int res = INF;
+	int res = 987654321;
 
 	//(d1, d2 ¡Ã 1, 1 ¡Â x < x + d1 + d2 ¡Â N, 1 ¡Â y - d1 < y < y + d2 ¡Â N)
 
 	for (int x = 1; x <= (N - 2); x++) {
 		for (int y = 2; y <= (N - 1); y++) {
-			for (int d1 = 1; d1 < y; d1++) {
-				for (int d2 = 1; d2 <= N - y; d2++) {
+			for (int d1 = 1; (d1 < y) && (d1 < N); d1++) {
+				for (int d2 = 1; (d2 <= N - y) && (d2 <= N - x - d1); d2++) {
 					memset(dist, 0, sizeof(dist));
 					setDist(x, y, d1, d2);
 					res = min(res, calcDiff(x, y, d1, d2));
