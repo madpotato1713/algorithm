@@ -1,8 +1,69 @@
 #include<iostream>
+#include<algorithm>
 
 using namespace std;
 
+const int INF = 987654321;
+int N;
+int map[21][21];
+
+int diff(int x, int y, int d1, int d2) {
+	//경계선
+	//(x, y), (x + 1, y - 1), ..., (x + d1, y - d1)
+	//(x, y), (x + 1, y + 1), ..., (x + d2, y + d2)
+	//(x + d1, y - d1), (x + d1 + 1, y - d1 + 1), ... (x + d1 + d2, y - d1 + d2)
+	//(x + d2, y + d2), (x + d2 + 1, y + d2 - 1), ..., (x + d2 + d1, y + d2 - d1)
+	//선거구
+	//1번 선거구 : 1 ≤ r < x + d1, 1 ≤ c ≤ y
+	//2번 선거구 : 1 ≤ r ≤ x + d2, y < c ≤ N
+	//3번 선거구 : x + d1 ≤ r ≤ N, 1 ≤ c < y - d1 + d2
+	//4번 선거구 : x + d2 < r ≤ N, y - d1 + d2 ≤ c ≤ N
+	int dist[21][21] = { 0 };
+
+
+	return 0;
+}
+
+int minDiff() {
+	int res = INF;
+
+	for (int x = 1; x <= N - 2; x++) {
+		for (int y = 2; y <= N - 1; y++) {
+			for (int d1 = 1; d1 <= y - 1 && d1 <= N - x - 1; d1++) {
+				for (int d2 = 1; d2 <= N - y && d2 <= N - x - 1; d2++) {
+					res = min(res, diff(x, y, d1, d2));
+				}
+			}
+		}
+	}
+
+	/*for (int d1 = 1; d1 <= y - 1 && d1 <= N - x - 1; d1++) {
+		for (int d2 = 1; d2 <= N - y && d2 <= N - x - 1; d2++) {
+			diff(x, y, d1, d2);
+		}
+	}*/
+
+	/*for (int d1 = 1; d1 <= y - 1; d1++) {
+		for (int d2 = 1; d2 <= N - y; d2++) {
+			if (d1 + d2 <= N - x) {
+				res = min(res, diff(x, y, d1, d2));
+			}
+		}
+	}*/
+
+	return res;
+}
+
 int main() {
+
+	cin >> N;
+	for (int x = 1; x <= N; x++) {
+		for (int y = 1; y <= N; y++) {
+			cin >> map[x][y];
+		}
+	}
+
+	cout << minDiff() << endl;
 
 	return 0;
 }

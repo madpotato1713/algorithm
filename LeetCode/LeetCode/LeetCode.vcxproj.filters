@@ -114,6 +114,15 @@
     <ClCompile Include="MinStack.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="TwoSumII-Inputarrayissorted.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="MajorityElement.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="ExcelSheetColumnTitle.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
