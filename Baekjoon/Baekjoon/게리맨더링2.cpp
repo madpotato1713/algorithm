@@ -20,6 +20,12 @@ int diff(int x, int y, int d1, int d2) {
 	//4번 선거구 : x + d2 < r ≤ N, y - d1 + d2 ≤ c ≤ N
 	int dist[21][21] = { 0 };
 
+	for (int r = 1; r <= N; r++) {
+		for (int c = 1; c <= N; c++) {
+
+		}
+	}
+
 
 	return 0;
 }
@@ -36,20 +42,6 @@ int minDiff() {
 			}
 		}
 	}
-
-	/*for (int d1 = 1; d1 <= y - 1 && d1 <= N - x - 1; d1++) {
-		for (int d2 = 1; d2 <= N - y && d2 <= N - x - 1; d2++) {
-			diff(x, y, d1, d2);
-		}
-	}*/
-
-	/*for (int d1 = 1; d1 <= y - 1; d1++) {
-		for (int d2 = 1; d2 <= N - y; d2++) {
-			if (d1 + d2 <= N - x) {
-				res = min(res, diff(x, y, d1, d2));
-			}
-		}
-	}*/
 
 	return res;
 }
