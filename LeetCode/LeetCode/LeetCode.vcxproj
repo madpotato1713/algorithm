@@ -159,6 +159,7 @@
     <ClCompile Include="ClimbingStairs.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="CombineTwoTables.cpp" />
     <ClCompile Include="ConvertSortedArraytoBinarySearchTree.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
@@ -167,6 +168,7 @@
     </ClCompile>
     <ClCompile Include="ExcelSheetColumnNumber.cpp" />
     <ClCompile Include="ExcelSheetColumnTitle.cpp" />
+    <ClCompile Include="FactorialTrailingZeroes.cpp" />
     <ClCompile Include="ImplementStrStr.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
@@ -237,6 +239,7 @@
     <ClCompile Include="SameTree.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="SecondHighestSalary.cpp" />
     <ClCompile Include="SingleNumber.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>

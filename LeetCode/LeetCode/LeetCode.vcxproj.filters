@@ -126,6 +126,15 @@
     <ClCompile Include="ExcelSheetColumnNumber.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="CombineTwoTables.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="FactorialTrailingZeroes.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="SecondHighestSalary.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">

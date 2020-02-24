@@ -1,5 +1,6 @@
 #include<iostream>
 #include<algorithm>
+#include<vector>
 
 using namespace std;
 
@@ -18,16 +19,36 @@ int diff(int x, int y, int d1, int d2) {
 	//2번 선거구 : 1 ≤ r ≤ x + d2, y < c ≤ N
 	//3번 선거구 : x + d1 ≤ r ≤ N, 1 ≤ c < y - d1 + d2
 	//4번 선거구 : x + d2 < r ≤ N, y - d1 + d2 ≤ c ≤ N
-	int dist[21][21] = { 0 };
+	vector<int> population(5, 0);
 
 	for (int r = 1; r <= N; r++) {
 		for (int c = 1; c <= N; c++) {
-
+			//1번 선거구
+			if (r < x + d1 && c <= y && !(r >= x && c >= y - (r - x))) {
+				population[0] += map[r][c];
+			}
+			//2번 선거구
+			else if (r <= x + d2 && c > y && !(r >= x && c <= y + (r - x))) {
+				population[1] += map[r][c];
+			}
+			//3번 선거구
+			else if (r >= x + d1 && c < y - d1 + d2 && !(r <= x + d1 + d2 && c >= (y - d1 + d2 - (x + d1 + d2 - r)))) {
+				population[2] += map[r][c];
+			}
+			//4번 선거구
+			else if (r > x + d2 && c >= y - d1 + d2 && !(r <= x + d1 + d2 && c <= (y - d1 + d2 + (x + d1 + d2 - r)))) {
+				population[3] += map[r][c];
+			}
+			//5번 선거구
+			else {
+				population[4] += map[r][c];
+			}
 		}
 	}
 
+	sort(population.begin(), population.end());
 
-	return 0;
+	return population[4] - population[0];
 }
 
 int minDiff() {
@@ -47,6 +68,8 @@ int minDiff() {
 }
 
 int main() {
+	ios::sync_with_stdio(false);
+	cin.tie(0);
 
 	cin >> N;
 	for (int x = 1; x <= N; x++) {
