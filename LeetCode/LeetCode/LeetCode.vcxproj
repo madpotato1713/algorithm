@@ -167,6 +167,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="CustomersWhoNeverOrder.cpp" />
+    <ClCompile Include="DeleteDuplicateEmails.cpp" />
     <ClCompile Include="EmployeesEarningMoreThanTheirManagers.cpp" />
     <ClCompile Include="ExcelSheetColumnNumber.cpp" />
     <ClCompile Include="ExcelSheetColumnTitle.cpp" />
