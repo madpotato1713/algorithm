@@ -1,7 +1,6 @@
 #include<iostream>
 #include<vector>
 #include<queue>
-#include<algorithm>
 
 using namespace std;
 
@@ -10,7 +9,7 @@ struct sharkInfo {
 	int eat;
 	int y;
 	int x;
-	sharkInfo(int size, int eat, int y, int x) : size(size), eat(eat), y(y), x(x) {};
+	sharkInfo(int size, int eat, int y, int x) :size(size), eat(eat), y(y), x(x) {};
 	sharkInfo() {};
 };
 
@@ -19,45 +18,58 @@ struct fishInfo {
 	int dist;
 	int y;
 	int x;
-	fishInfo(int size, int dist, int y, int x) : size(size), dist(dist), y(y), x(x) {};
+	fishInfo(int size, int dist, int y, int x) :size(size), dist(dist), y(y), x(x) {};
 	fishInfo() {};
-
 	bool operator()(fishInfo f1, fishInfo f2) {
-		return f1.size < f2.size;
+		if (f1.dist > f2.dist) {
+			return true;
+		}
+		else if (f1.dist == f2.dist) {
+			if (f1.y > f2.y) {
+				return true;
+			}
+			else if (f1.y == f2.y) {
+				return f1.x > f2.x;
+			}
+			return false;
+		}
+		return false;
 	}
 };
-
-sharkInfo shark;
 
 const int INF = 987654321;
 int N;
 int map[20][20];
-int dir[4][2] = { {-1, 0}, {1, 0}, {0, -1}, {0, 1} };	//상, 하, 좌, 우
+sharkInfo shark;
+vector<fishInfo> fishes;
+vector<int> visited;
+int dir[4][2] = {	//상, 하, 좌, 우
+	{-1, 0}, {1, 0}, {0, -1}, {0, 1}
+};
 
-int calcDist(int size, int sy, int sx, int fy, int fx){
-	int visited[20][20] = { 0 };
+int calcDist(int fy, int fx) {
+	int check[20][20] = { 0 };
 	int dist[20][20] = { 0 };
-
 	queue<pair<int, int>> q;
-	q.push(make_pair(sy, sx));
+	q.push(make_pair(shark.y, shark.x));
 
-	int cnt = 1;
 	while (!q.empty()) {
-		pair<int, int> front = q.front();
+		int y = q.front().first;
+		int x = q.front().second;
 		q.pop();
-		int y = front.first;
-		int x = front.second;
 
+		//물고기 위치에 다다르면 중단
 		if (y == fy && x == fx)
 			break;
 
-		visited[y][x] = 1;
+		check[y][x] = 1;	//방문 체크
 
 		for (int i = 0; i < 4; i++) {
 			int dy = y + dir[i][0];
 			int dx = x + dir[i][1];
 
-			if (!visited[dy][dx] && size >= map[dy][dx] && dy >= 0 && dy < N && dx >= 0 && dx < N) {
+			//방문 안했고, 상어보다 큰 고기 없고, 맵 안에 있으면
+			if (!check[dy][dx] && shark.size >= map[dy][dx] && dy >= 0 && dy < N && dx >= 0 && dx < N) {
 				q.push(make_pair(dy, dx));
 				dist[dy][dx] = dist[y][x] + 1;
 			}
@@ -68,27 +80,34 @@ int calcDist(int size, int sy, int sx, int fy, int fx){
 }
 
 int eatingTime() {
-	priority_queue<fishInfo, vector<fishInfo>, fishInfo> pq;
+	int res = 0;
 
-	for (int y = 0; y < N; y++) {
-		for (int x = 0; x < N; x++) {
-			if (map[y][x]) {
-				if (map[y][x] < shark.size) {
-					pq.push(fishInfo(map[y][x], calcDist(shark.size, shark.y, shark.x, y, x), y, x));
-				}
-				else {
-					pq.push(fishInfo(map[y][x], INF, y, x));
-				}
+	while (true) {
+		priority_queue<fishInfo, vector<fishInfo>, fishInfo> pq;
+
+		for (int i = 0; i < fishes.size(); i++) {
+			if (map[fishes[i].y][fishes[i].x] && shark.size > fishes[i].size) {	//방문 안했고 사이즈 작을때만 선택
+				fishes[i].dist = calcDist(fishes[i].y, fishes[i].x);
+				pq.push(fishes[i]);
 			}
 		}
-	}
 
-	while (!pq.empty()) {
-		cout << pq.top().size << endl;
+		if (pq.empty())
+			break;
+
+		shark.eat++;
+		if (shark.eat == shark.size) {
+			shark.size++;
+			shark.eat = 0;
+		}
+		shark.y = pq.top().y;
+		shark.x = pq.top().x;
+		res += pq.top().dist;
+		map[pq.top().y][pq.top().x] = 0; //먹은 고기는 0으로 처리
 		pq.pop();
 	}
 
-	return 0;
+	return res;
 }
 
 int main() {
@@ -97,7 +116,13 @@ int main() {
 	for (int y = 0; y < N; y++) {
 		for (int x = 0; x < N; x++) {
 			cin >> map[y][x];
-			if (map[y][x] == 9) shark = sharkInfo(2, 0, y, x); //상어
+			if (map[y][x] == 9) {
+				map[y][x] = 0;	//상어 위치는 map에서 제외
+				shark = sharkInfo(2, 0, y, x);
+			}
+			else if (map[y][x]) {
+				fishes.push_back(fishInfo(map[y][x], 0, y, x));
+			}
 		}
 	}
 
