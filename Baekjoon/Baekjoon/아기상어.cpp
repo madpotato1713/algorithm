@@ -1,111 +1,107 @@
 #include<iostream>
 #include<vector>
 #include<queue>
+#include<algorithm>
 
 using namespace std;
 
-struct sharkInfo {
+struct info {
 	int size;
-	int eat;
+	int eatOrDist;
 	int y;
 	int x;
-	sharkInfo(int size, int eat, int y, int x) :size(size), eat(eat), y(y), x(x) {};
-	sharkInfo() {};
-};
-
-struct fishInfo {
-	int size;
-	int dist;
-	int y;
-	int x;
-	fishInfo(int size, int dist, int y, int x) :size(size), dist(dist), y(y), x(x) {};
-	fishInfo() {};
-	bool operator()(fishInfo f1, fishInfo f2) {
-		if (f1.dist > f2.dist) {
-			return true;
-		}
-		else if (f1.dist == f2.dist) {
-			if (f1.y > f2.y) {
-				return true;
-			}
-			else if (f1.y == f2.y) {
-				return f1.x > f2.x;
-			}
-			return false;
-		}
-		return false;
-	}
+	info(int size, int eatOrDist, int y, int x) : size(size), eatOrDist(eatOrDist), y(y), x(x) {};
+	info() {};
 };
 
 const int INF = 987654321;
 int N;
 int map[20][20];
-sharkInfo shark;
-vector<fishInfo> fishes;
-vector<int> visited;
-int dir[4][2] = {	//상, 하, 좌, 우
-	{-1, 0}, {1, 0}, {0, -1}, {0, 1}
-};
+info shark;
+vector<info> fishes;
+
+bool comp(info f1, info f2) {
+	if (f1.eatOrDist > f2.eatOrDist) {
+		return true;
+	}
+	else if (f1.eatOrDist == f2.eatOrDist) {
+		if (f1.y > f2.y) {
+			return true;
+		}
+		else if (f1.y == f2.y) {
+			return f1.x > f2.x;
+		}
+		return false;
+	}
+	return false;
+}
+
+int dir[4][2] = { {-1, 0}, {1, 0}, {0, -1}, {0, 1} };
 
 int calcDist(int fy, int fx) {
-	int check[20][20] = { 0 };
-	int dist[20][20] = { 0 };
+	int visited[20][20] = { 0 };
+	int distance[20][20] = { 0 };
+
 	queue<pair<int, int>> q;
 	q.push(make_pair(shark.y, shark.x));
+
+	visited[shark.y][shark.x] = 1;
 
 	while (!q.empty()) {
 		int y = q.front().first;
 		int x = q.front().second;
 		q.pop();
 
-		//물고기 위치에 다다르면 중단
-		if (y == fy && x == fx)
+		if (fy == y && fx == x)
 			break;
-
-		check[y][x] = 1;	//방문 체크
 
 		for (int i = 0; i < 4; i++) {
 			int dy = y + dir[i][0];
 			int dx = x + dir[i][1];
 
-			//방문 안했고, 상어보다 큰 고기 없고, 맵 안에 있으면
-			if (!check[dy][dx] && shark.size >= map[dy][dx] && dy >= 0 && dy < N && dx >= 0 && dx < N) {
-				q.push(make_pair(dy, dx));
-				dist[dy][dx] = dist[y][x] + 1;
+			if (dy >= 0 && dy < N && dx >= 0 && dx < N) {
+				if (!visited[dy][dx] && map[dy][dx] <= shark.size) {
+					visited[dy][dx] = 1;
+					distance[dy][dx] = distance[y][x] + 1;
+					q.push(make_pair(dy, dx));
+				}
 			}
 		}
 	}
 
-	return dist[fy][fx];
+	return distance[fy][fx]? distance[fy][fx] : INF;
 }
 
 int eatingTime() {
 	int res = 0;
+	int len = fishes.size();
 
-	while (true) {
-		priority_queue<fishInfo, vector<fishInfo>, fishInfo> pq;
-
-		for (int i = 0; i < fishes.size(); i++) {
-			if (map[fishes[i].y][fishes[i].x] && shark.size > fishes[i].size) {	//방문 안했고 사이즈 작을때만 선택
-				fishes[i].dist = calcDist(fishes[i].y, fishes[i].x);
-				pq.push(fishes[i]);
-			}
+	while (len) {
+		for (int i = 0; i < len; i++) {
+			if (fishes[i].size >= shark.size)
+				fishes[i].eatOrDist = INF;
+			else
+				fishes[i].eatOrDist = calcDist(fishes[i].y, fishes[i].x);
 		}
-
-		if (pq.empty())
+		sort(fishes.begin(), fishes.end(), comp);
+		
+		if (fishes[len - 1].eatOrDist == INF)
 			break;
-
-		shark.eat++;
-		if (shark.eat == shark.size) {
+		
+		shark.eatOrDist++;
+		if (shark.size == shark.eatOrDist) {
 			shark.size++;
-			shark.eat = 0;
+			shark.eatOrDist = 0;
 		}
-		shark.y = pq.top().y;
-		shark.x = pq.top().x;
-		res += pq.top().dist;
-		map[pq.top().y][pq.top().x] = 0; //먹은 고기는 0으로 처리
-		pq.pop();
+		shark.y = fishes[len - 1].y;
+		shark.x = fishes[len - 1].x;
+
+		res += fishes[len - 1].eatOrDist;
+		fishes[len - 1].eatOrDist = 0;
+
+		len--;
 	}
+
 
 	return res;
 }
@@ -117,11 +113,11 @@ int main() {
 		for (int x = 0; x < N; x++) {
 			cin >> map[y][x];
 			if (map[y][x] == 9) {
-				map[y][x] = 0;	//상어 위치는 map에서 제외
-				shark = sharkInfo(2, 0, y, x);
+				map[y][x] = 0;
+				shark = info(2, 0, y, x);
 			}
-			else if (map[y][x]) {
-				fishes.push_back(fishInfo(map[y][x], 0, y, x));
+			else if (map[y][x] > 0 && map[y][x] < 9) {
+				fishes.push_back(info(map[y][x], 0, y, x));
 			}
 		}
 	}

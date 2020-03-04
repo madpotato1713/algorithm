@@ -166,6 +166,7 @@
     <ClCompile Include="CountandSay.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="CountPrimes.cpp" />
     <ClCompile Include="CustomersWhoNeverOrder.cpp" />
     <ClCompile Include="DeleteDuplicateEmails.cpp" />
     <ClCompile Include="EmployeesEarningMoreThanTheirManagers.cpp" />
