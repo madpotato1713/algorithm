@@ -1,4 +1,3 @@
-/* CASE1 */
 class Solution {
 public:
 	int countPrimes(int n) {
@@ -24,4 +23,3 @@ public:
 	}
 };
 
-/* CASE2 */
