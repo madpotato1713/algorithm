@@ -162,6 +162,9 @@
     <ClCompile Include="CountPrimes.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="IsomorphicStrings.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
