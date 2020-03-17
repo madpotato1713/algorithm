@@ -158,6 +158,7 @@
     <ClCompile Include="BinaryTreeLevelOrderTraversalII.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="BinaryTreePaths.cpp" />
     <ClCompile Include="ClimbingStairs.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
