@@ -185,6 +185,7 @@
     <ClCompile Include="DeleteDuplicateEmails.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="DeleteNodeinaLinkedList.cpp" />
     <ClCompile Include="EmployeesEarningMoreThanTheirManagers.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
