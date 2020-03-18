@@ -324,6 +324,7 @@
     <ClCompile Include="TwoSumII-Inputarrayissorted.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="UglyNumber.cpp" />
     <ClCompile Include="ValidAnagram.cpp" />
     <ClCompile Include="ValidParentheses.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
