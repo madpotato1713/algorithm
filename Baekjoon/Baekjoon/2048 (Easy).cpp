@@ -50,7 +50,6 @@ int move(int cnt) {
 
 		//맵 움직이는 로직
 
-
 		res = max(res, move(cnt + 1));
 
 		//맵 원복 로직
