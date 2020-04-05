@@ -60,6 +60,7 @@ int play() {
 			if (front.second == 'L') snakedir = 2;
 			else if (front.second == 'D') snakedir = 3;
 		}
+
 		else if (snakedir == 1) {
 			if (front.second == 'L') snakedir = 3;
 			else if (front.second == 'D') snakedir = 2;
