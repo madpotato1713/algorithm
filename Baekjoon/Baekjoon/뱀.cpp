@@ -25,6 +25,7 @@ vector<point> snake;	//뱀 위치 정보 저장
 queue<pair<int, char>> moveinfo;	//변환정보 저장(L, D)
 int direction[4][2] = { {-1, 0}, {1, 0}, {0, -1}, {0, 1} };	//상, 하, 좌, 우
 
+//TODO 내가 보는 기준으로 오른쪽임...
 int dirInfo(int snakedir, char lr) {
 	//다음 방향 정보 변경
 	if (snakedir == 0) {
@@ -47,6 +48,7 @@ int dirInfo(int snakedir, char lr) {
 	return snakedir;
 }
 
+//TODO 시작부터 1초 셈..
 int play() {
 	int cnt = 0;
 
@@ -66,17 +68,11 @@ int play() {
 				if (nextY < 1 || nextY > N || nextX < 1 || nextX > N)
 					return cnt;
 
-				////자기 자신한테 부딪히는 경우(끝)	수정 필요(맨 머리만 검사하면 될 것 같다)
-				//for (int c = 0; c < snake.size(); c++) {
-				//	if (snake[c].y == nextY && snake[c].x == nextX) {
-				//		return cnt;
-				//	}
-				//}
-
 				//사과 있는 경우
 				if (map[nextY][nextX] == -1) {
 					snake.push_back(point(nextY, nextX, snake[s].dir));
 					map[nextY][nextX] = 0;
+					break;
 				}
 				//사과 없는 경우
 				else {
@@ -88,6 +84,15 @@ int play() {
 				nextDir = tmpDir;
 			}
 		}
+
+		//자기 자신한테 부딪히는 경우(끝)
+		for (int s = snake.size() - 2; s >= 0; s--) {
+			if (snake[snake.size() - 1].y == snake[s].y && snake[snake.size() - 1].x == snake[s].x) {
+				return cnt;
+			}
+		}
+
+		//다음 위치정보로 변경
 		snake[snake.size() - 1].dir = dirInfo(snake[snake.size() - 1].dir, front.second);
 	}
 
