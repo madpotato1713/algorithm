@@ -19,9 +19,7 @@ int map[MAXIMUM][MAXIMUM];
 int N;	//보드의 크기
 int K;	//사과의 개수
 int L;	//위치 변환 정보
-//vector<point> apples;	//사과 위치 저장
 vector<point> snake;	//뱀 위치 정보 저장
-//char snakedir;
 queue<pair<int, char>> moveinfo;	//변환정보 저장(L, D)
 int direction[4][2] = { {-1, 0}, {1, 0}, {0, -1}, {0, 1} };	//상, 하, 좌, 우
 
@@ -100,13 +98,6 @@ int play() {
 			}
 		}
 
-		////자기 자신한테 부딪히는 경우(끝)
-		//for (int s = snake.size() - 2; s >= 0; s--) {
-		//	if (snake[snake.size() - 1].y == snake[s].y && snake[snake.size() - 1].x == snake[s].x) {
-		//		return cnt;
-		//	}
-		//}
-
 		//다음 위치정보로 변경
 		if (front.second != ' ') {
 			snake[snake.size() - 1].dir = dirInfo(snake[snake.size() - 1].dir, front.second);
@@ -123,7 +114,6 @@ int main() {
 	for (int i = 0; i < K; i++) {
 		int y, x;
 		cin >> y >> x;
-		//apples.push_back(point(y, x));
 		map[y][x] = -1;	//-1: 사과의 위치
 	}
 	cin >> L;
@@ -138,8 +128,6 @@ int main() {
 	}
 	//뱀의 초기 위치와 방향 저장 : (1, 1)부터 시작, 처음에 오른쪽을 향함
 	snake.push_back(point(1, 1, 3));
-	//map[1][1] = 1;	//뱀의 초기 위치 표시
-	//snakedir = 3;	//뱀의 초기 방향은 오른쪽
 
 	cout << play() << endl;
 
