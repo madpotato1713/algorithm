@@ -182,6 +182,7 @@
     <ClCompile Include="ContainsDuplicateII.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="ConvertaNumbertoHexadecimal.cpp" />
     <ClCompile Include="ConvertSortedArraytoBinarySearchTree.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
