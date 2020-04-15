@@ -9,7 +9,7 @@ vector<int> nums;
 
 int main() {
 
-	int res = 0;
+	long res = 0;
 
 	cin >> N;
 	nums = vector<int>(N, 0);
