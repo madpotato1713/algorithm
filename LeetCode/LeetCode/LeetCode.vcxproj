@@ -400,6 +400,7 @@
     <ClCompile Include="SymmetricTree.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="ThirdMaximumNumber.cpp" />
     <ClCompile Include="TwoSumII-Inputarrayissorted.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
