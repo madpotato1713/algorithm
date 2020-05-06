@@ -303,6 +303,12 @@
     <ClCompile Include="NumberofBoomerangs.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="FindAllNumbersDisappearedinanArray.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="MinimumMovestoEqualArrayElements.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">

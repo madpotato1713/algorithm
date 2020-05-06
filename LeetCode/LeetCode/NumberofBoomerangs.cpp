@@ -1,3 +1,4 @@
+/* CASE1 */
 class Solution {
 public:
 	int dist[500][500];
@@ -39,3 +40,4 @@ public:
 		return res;
 	}
 };
+
